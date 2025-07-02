@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage ALOG | Amikom Psikolog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+ <style>
+    /* Sembunyikan halaman konfirmasi secara default */
+    #konfirmasi {
+      display: none;
+    }
+
+    /* Tampilkan konfirmasi jika menjadi target (setelah submit menuju #konfirmasi) */
+    #konfirmasi:target {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<main>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">ALOG | Amikom Psikolog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="layanan.html">Booking</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+  <div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Formulir Booking Konsultasi - via Telephone</h4>
+          </div>
+          <div class="card-body p-4">
+            <form action="#konfirmasi">
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama (boleh samaran)</label>
+                <input type="text" class="form-control" id="nama" name="nama" required>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="usia" class="form-label">Usia</label>
+                  <input type="number" class="form-control" id="usia" name="usia" min="1" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="jenisKelamin" class="form-label">Jenis Kelamin</label>
+                  <select class="form-select" id="jenisKelamin" name="jenisKelamin" required>
+                    <option value="" disabled selected>Pilih...</option>
+                    <option value="Pria">Pria</option>
+                    <option value="Wanita">Wanita</option>
+                  </select>
+                </div>
+              </div>
+
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center align-middle">
+                    <thead class="table-primary">
+                      <tr>
+                        <th>Hari</th>
+                        <th>Sesi Pagi</th>
+                        <th>Sesi Siang</th>
+                        <th>Sesi Sore-Malam</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Senin</td>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="jadwal" id="senin-pagi" value="Senin 09.00 – 10.00" required>
+                            <label class="form-check-label" for="senin-pagi">09.00 – 10.00</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="jadwal" id="senin-siang" value="Senin 13.00 – 14.00">
+                            <label class="form-check-label" for="senin-siang">13.00 – 14.00</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="jadwal" id="senin-malam" value="Senin 18.30 – 19.30">
+                            <label class="form-check-label" for="senin-malam">18.30 – 19.30</label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Selasa</td>
+                        <td><div class="form-check"><input class="form-check-input" type="radio" name="jadwal" id="selasa-pagi" value="Selasa 09.00 – 10.00"><label class="form-check-label" for="selasa-pagi">09.00 – 10.00</label></div></td>
+                        <td><div class="form-check"><input class="form-check-input" type="radio" name="jadwal" id="selasa-siang" value="Selasa 13.00 – 14.00"><label class="form-check-label" for="selasa-siang">13.00 – 14.00</label></div></td>
+                        <td><div class="form-check"><input class="form-check-input" type="radio" name="jadwal" id="selasa-malam" value="Selasa 19.00 – 20.00"><label class="form-check-label" for="selasa-malam">19.00 – 20.00</label></div></td>
+                      </tr>
+                      <!-- Lanjutkan hari-hari lainnya seperti pola di atas -->
+                      <tr>
+                        <td>Minggu</td>
+                        <td colspan="3" class="text-muted">Libur / By Request</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              <div class="mb-3">
+                <label for="metodePembayaran" class="form-label">Metode Pembayaran</label>
+                <select class="form-select" id="metodePembayaran" name="metodePembayaran" required>
+                  <option value="" disabled selected>Pilih metode pembayaran...</option>
+                  <option value="Transfer Bank">Transfer Bank (Virtual Account)</option>
+                  <option value="E-Wallet">E-Wallet (GoPay/OVO/Dana)</option>
+                  <option value="Kartu Kredit">Kartu Kredit/Debit</option>
+                </select>
+              </div>
+
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Booking Sekarang</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-7 col-md-8" id="konfirmasi">
+      <div class="card shadow-lg">
+        <div class="card-header bg-success text-white text-center">
+          <h4 class="mb-0">✅ Booking Berhasil!</h4>
+          <p class="mb-0 small">Terima kasih <span id="namaPemesan">Nama Pengguna</span> telah melakukan booking. Detail akan dikirim melalui email.</p>
+        </div>
+        <div class="card-body p-4">
+          <p>Silakan lakukan pembayaran sebelum jadwal sesi Anda ke rekening berikut:</p>
+          <ul>
+            <li><strong>Bank:</strong> BNI</li>
+            <li><strong>Nomor Rekening:</strong> 1234567890</li>
+            <li><strong>Atas Nama:</strong> ALOG Amikom Psikolog</li>
+          </ul>
+          <p class="text-muted">Setelah melakukan pembayaran, Anda dapat langsung masuk ke sesi konsultasi.</p>
+          <div class="d-grid gap-2 mt-4">
+            <a href="telephon.html" class="btn btn-primary">Lanjut ke Konsultasi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </main>
+
+    <footer class="text-center py-4 border-top bg-white mt-5">
+        <p class="mb-0 text-muted">&copy; 2025 Alog - Universitas Amikom Yogyakarta</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
